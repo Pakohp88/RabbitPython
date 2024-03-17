@@ -10,7 +10,7 @@ channel.exchange_declare(exchange='temperature', exchange_type='fanout')
 
 for i in range(1,10):
     time.sleep(3)
-    message = "Station 1 - " + str(random.randint(0, 40)) + " °C"
+    message = "Station 2 - " + str(random.randint(0, 40)) + " °C"
     channel.basic_publish(exchange='temperature', routing_key='', body=message)
     print("Published Message")
 
